@@ -1,0 +1,173 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.nav-bar{
+    
+    background: url('https://source.unsplash.com/random/1020*1023');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition:3s;
+}
+.logo{
+    
+    margin: 0px;
+    flex-grow: 1;
+    padding: 0px;
+    
+}
+.imglogo{
+    height: 100px;
+    width: 100px;
+    
+    transition: 2s ease-in;
+}
+.imglogo:hover{
+   
+    height: 200px;
+    width: 200px;
+    
+    
+
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    flex-grow: 2;
+    justify-content: space-evenly;
+    text-transform: uppercase;    
+    padding: 1rem;
+    transition:3s;
+    transform: rotateX(360deg);
+}
+.menu li{
+    border-radius: 5px;
+}
+.menu li:hover{
+    box-shadow: 0 0 5px 2px hsl(0, 0%, 100%);
+    border-radius: 5px;
+    transition: 1s;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.menu img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    animation-name: renk-degistir,boyut-degistir;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+@keyframes boyut-degistir {
+    to{
+        width: 50px;
+        height: 50px;
+    }
+}
+.main{
+    background: url('https://source.unsplash.com/random/1024*1024') no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.main-content{
+    padding: 10%;
+}
+.main-content h1{
+    color: blue;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.main-content p{
+    line-height: 1.5;
+    color: rgb(45, 45, 231);
+    font-size: 1.5rem;
+}
+.iletisim{
+    background: url('https://source.unsplash.com/random/1020*1024');
+    padding: 2rem;   
+}
+.iletisim-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+.iletisim-content h2{
+    color: rgb(185, 178, 178);
+    text-shadow: 1px 1px rgb(255, 255, 255);
+}
+.iletisim-content input, .iletisim-content textarea{
+    margin: 1rem;
+    width: 30%;
+    padding: .5rem;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px;
+}
+.iletisim-content input:focus, .iletisim-content textarea:focus{
+    color: rgb(192, 54, 54);
+    transition: 3s;
+    width: 40%;
+}
+.btn{
+    margin: .5rem;
+    padding: .5rem;
+    width: 5%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px;
+    cursor: pointer;
+    animation: goz-kirpma 500ms ease-in-out infinite;
+}
+.btn:hover{
+    background-color: gray;
+    transition: 1s; 
+    transform: scale(1.2);
+}
+@keyframes goz-kirpma {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+[data-tooltip]{
+    position: relative;
+    
+}
+[data-tooltip]:hover::before{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left:50%;
+    transform: translate(-50%);
+    background-color: black;
+    border-radius: .3rem;
+    color: white;
+    padding: .5rem;
+    width: max-content;
+    display: flex;
+    text-align: center;
+    text-transform: lowercase;
+}
